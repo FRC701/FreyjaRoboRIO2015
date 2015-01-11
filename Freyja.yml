@@ -7,69 +7,19 @@ Children:
     - Children: []
       Properties:
         CAN ID: !!robotbuilder.data.properties.ChoicesProperty
-          choices: &id001 ['2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12',
-            '13', '14', '15', '16', '17', '18', '19', '20']
+          choices: ['2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13',
+            '14', '15', '16', '17', '18', '19', '20']
           default: '2'
           name: CAN ID
-          validators: &id002 [CANID]
-          value: '5'
-      Base: CAN Jaguar
-      Name: leftFrontMotor
-    - Children: []
-      Properties:
-        CAN ID: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id001
-          default: '2'
-          name: CAN ID
-          validators: *id002
-          value: '6'
-      Base: CAN Jaguar
-      Name: leftMiddleMotor
-    - Children: []
-      Properties:
-        CAN ID: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id001
-          default: '2'
-          name: CAN ID
-          validators: *id002
-          value: '7'
-      Base: CAN Jaguar
-      Name: leftRearMotor
-    - Children: []
-      Properties:
-        CAN ID: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id001
-          default: '2'
-          name: CAN ID
-          validators: *id002
-          value: '2'
-      Base: CAN Jaguar
-      Name: rightFrontMotor
-    - Children: []
-      Properties:
-        CAN ID: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id001
-          default: '2'
-          name: CAN ID
-          validators: *id002
+          validators: [CANID]
           value: '3'
       Base: CAN Jaguar
-      Name: rightMiddleMotor
-    - Children: []
-      Properties:
-        CAN ID: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id001
-          default: '2'
-          name: CAN ID
-          validators: *id002
-          value: '4'
-      Base: CAN Jaguar
-      Name: rightRearMotor
+      Name: Motor
     Properties:
       Default Command: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
-        name: Default Command, type: Command, validators: null, value: Drive}
+        name: Default Command, type: Command, validators: null, value: MotorOn}
     Base: Subsystem
-    Name: Chassis
+    Name: Motorrr
   Properties: {}
   Base: Subsystems
   Name: Subsystems
@@ -77,23 +27,13 @@ Children:
   - Children: []
     Properties:
       Number: !!robotbuilder.data.properties.ChoicesProperty
-        choices: &id003 ['0', '1', '2', '3', '4', '5']
+        choices: ['0', '1', '2', '3', '4', '5']
         default: 1
         name: Number
-        validators: &id004 [Joystick]
+        validators: [Joystick]
         value: '0'
     Base: Joystick
     Name: driver
-  - Children: []
-    Properties:
-      Number: !!robotbuilder.data.properties.ChoicesProperty
-        choices: *id003
-        default: 1
-        name: Number
-        validators: *id004
-        value: '1'
-    Base: Joystick
-    Name: coDriver
   Properties: {}
   Base: OI
   Name: Operator Interface
@@ -109,17 +49,17 @@ Children:
   - Children: []
     Properties:
       Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
-        name: Requires, type: Subsystem, validators: null, value: Chassis}
+        name: Requires, type: Subsystem, validators: null, value: Motorrr}
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
         name: Button on SmartDashboard, validators: null, value: true}
     Base: Command
-    Name: Drive
+    Name: MotorOn
   Properties: {}
   Base: Commands
   Name: Commands
 Properties:
-  Eclipse Workspace: !!robotbuilder.data.properties.FileProperty {default: 'C:\Users\Diego\workspace',
-    extension: null, folder: true, name: Eclipse Workspace, validators: null, value: 'C:\Users\Diego\workspace\FreyjaRoboRIO2015'}
+  Eclipse Workspace: !!robotbuilder.data.properties.FileProperty {default: 'C:\Users\vandenrobotics\workspace',
+    extension: null, folder: true, name: Eclipse Workspace, validators: null, value: 'C:\Users\vandenrobotics\workspace'}
   Export Commands: !!robotbuilder.data.properties.BooleanProperty {default: true,
     name: Export Commands, validators: null, value: true}
   Java Package: !!robotbuilder.data.properties.StringProperty {default: org.usfirst.frc0000,
