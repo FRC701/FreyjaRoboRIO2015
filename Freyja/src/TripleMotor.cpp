@@ -22,7 +22,7 @@ void TripleMotor::Set(float speed, uint8_t syncGroup)
 {
 	mSpeedController1->Set(speed, syncGroup);
 	mSpeedController2->Set(speed, syncGroup);
-       mSpeedController3->Set(speed, syncGroup);
+    mSpeedController3->Set(speed, syncGroup);
 }
 
 float TripleMotor::Get()
@@ -33,7 +33,7 @@ void TripleMotor::Disable()
 {
 	mSpeedController1->Disable();
 	mSpeedController2->Disable();
-        mSpeedController3->Disable();
+    mSpeedController3->Disable();
 }
 
 void TripleMotor::PIDWrite(float output)

@@ -27,7 +27,12 @@ void Drive::Initialize() {
 
 // Called repeatedly when this Command is scheduled to run
 void Drive::Execute() {
-	
+	const int leftY = 2;
+	const int rightY = 5;
+	Robot::chassis->robotDrive->TankDrive(Robot::oi->getdriver(),
+						                      leftY,
+						                      Robot::oi->getdriver(),
+						                      rightY);
 }
 
 // Make this return true when this Command no longer needs to run execute()
